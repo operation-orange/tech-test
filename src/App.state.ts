@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
 import { App } from './App';
+import { IApplicationState } from './state';
 import { fetch } from './state/forecast/actions';
 import { IForecast } from './state/forecast/types';
-import { IApplicationState } from './state/store';
 
 export interface IStateProps {
   data: IForecast[];

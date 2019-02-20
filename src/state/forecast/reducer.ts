@@ -16,6 +16,9 @@ export const reducer: Reducer<IForecastState> = (state = initialState, action) =
     case ForecastActionTypes.FETCH_SUCCESS:
       return { ...state, loading: false, data: action.payload };
 
+    case ForecastActionTypes.FETCH_FAIL:
+      return { ...state, loading: false };
+
     default:
       return state;
   }
