@@ -1,5 +1,6 @@
 export interface IForecast {
-  id: number;
+  date: Date;
+  temp: number;
 }
 
 export enum ForecastActionTypes {

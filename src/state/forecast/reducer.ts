@@ -2,11 +2,10 @@ import { Reducer } from 'redux';
 
 import { ForecastActionTypes, IForecastState } from './types';
 
-// Type-safe initialState!
 export const initialState: IForecastState = {
   data: [],
   loading: false,
-  search: '',
+  search: 'manchester',
 };
 
 export const reducer: Reducer<IForecastState> = (state = initialState, action) => {
