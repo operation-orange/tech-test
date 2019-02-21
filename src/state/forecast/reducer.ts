@@ -6,10 +6,14 @@ import { ForecastActionTypes, IForecastState } from './types';
 export const initialState: IForecastState = {
   data: [],
   loading: false,
+  search: '',
 };
 
 export const reducer: Reducer<IForecastState> = (state = initialState, action) => {
   switch (action.type) {
+    case ForecastActionTypes.UPDATE_SEARCH:
+      return { ...state, search: action.payload };
+
     case ForecastActionTypes.FETCH:
       return { ...state, loading: true };
 

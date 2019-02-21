@@ -1,7 +1,14 @@
-import { IForecast } from '../state/forecast/types';
+import axios from 'axios';
+
+const client = axios.create({
+  baseURL: 'http://api.openweathermap.org/data/2.5',
+});
 
 export default {
-  get: () => new Promise<IForecast[]>((resolve) => {
-    setTimeout(() => resolve([{id: 1}]), 2000);
+  getForecast: (location: string) => client.get('/forecast', {
+    params: {
+      APPID: 'd54e1e446543e2febf6218640168e912',
+      q: `${location},gb`,
+    },
   }),
 };
