@@ -1,0 +1,51 @@
+html, input, button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eff2f4;
+}
+
+#root {
+  padding: 1rem;
+}
+
+.table {
+  height: auto;
+  width: 100%;
+  /* box-shadow: var(--box-shadow-large); */
+  border-radius: 3px;
+  border-bottom: 0;
+}
+
+.table__row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.table__head {
+  /* background: var(--color-outer-space); */
+  border-radius: 3px 3px 0 0;
+  font-weight: bold;
+  /* color: var(--color-white); */
+}
+
+.table__body {
+  /* color: var(--color-white); */
+  text-decoration: none;
+}
+
+.table__item {
+  display: flex;
+  min-height: 30px;
+  padding: 0 35px;
+  align-items: center;
+}
+
+.table__item__first {
+  padding-left: 0;
+}

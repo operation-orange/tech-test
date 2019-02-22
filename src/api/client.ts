@@ -49,6 +49,7 @@ const getForecast = (location: string) => client.get<IForecastResponse>('/foreca
   params: {
     APPID: 'd54e1e446543e2febf6218640168e912',
     q: `${location},gb`,
+    units: 'metric',
   },
 }).then((response) => transformResponse(response.data.city, response.data.list));
 
