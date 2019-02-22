@@ -1,6 +1,11 @@
 export interface IForecast {
-  date: Date;
+  date: number;
   temp: number;
+}
+
+export interface ILocation {
+  name: string;
+  forecastList: IForecast[];
 }
 
 export enum ForecastActionTypes {
@@ -14,5 +19,5 @@ export interface IForecastState {
   readonly error: string;
   readonly search: string;
   readonly loading: boolean;
-  readonly data: IForecast[];
+  readonly data: ILocation[];
 }
