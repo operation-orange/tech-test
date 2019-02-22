@@ -11,10 +11,11 @@ function* fetchForecast() {
     const data = yield call(api.getForecast, search);
     yield put(fetchSuccess(data));
   } catch (e) {
-    yield put(fetchFail());
-    // tslint:disable-next-line:no-console
-    console.log(e);
-    alert('An error has occured.');
+    if (e.response.status === 404) {
+      yield put(fetchFail('Location not found'));
+    } else {
+      yield put(fetchFail('Unknown error'));
+    }
   }
 }
 

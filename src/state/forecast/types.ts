@@ -11,6 +11,7 @@ export enum ForecastActionTypes {
 }
 
 export interface IForecastState {
+  readonly error: string;
   readonly search: string;
   readonly loading: boolean;
   readonly data: IForecast[];

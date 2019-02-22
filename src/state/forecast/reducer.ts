@@ -4,6 +4,7 @@ import { ForecastActionTypes, IForecastState } from './types';
 
 export const initialState: IForecastState = {
   data: [],
+  error: '',
   loading: false,
   search: 'manchester',
 };
@@ -14,13 +15,13 @@ export const reducer: Reducer<IForecastState> = (state = initialState, action) =
       return { ...state, search: action.payload };
 
     case ForecastActionTypes.FETCH:
-      return { ...state, loading: true };
+      return { ...state, loading: true, error: '' };
 
     case ForecastActionTypes.FETCH_SUCCESS:
       return { ...state, loading: false, data: action.payload };
 
     case ForecastActionTypes.FETCH_FAIL:
-      return { ...state, loading: false };
+      return { ...state, loading: false, error: action.payload };
 
     default:
       return state;

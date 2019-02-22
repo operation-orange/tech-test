@@ -7,6 +7,7 @@ import { IForecast } from './state/forecast/types';
 
 export interface IStateProps {
   data: IForecast[];
+  error: string;
   loading: boolean;
   search: string;
   updateSearchAction: typeof updateSearch;
@@ -15,6 +16,7 @@ export interface IStateProps {
 
 const mapStateToProps = ({ forecast }: IApplicationState) => ({
   data: forecast.data,
+  error: forecast.error,
   loading: forecast.loading,
   search: forecast.search,
 });
